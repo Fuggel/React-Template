@@ -1,0 +1,50 @@
+name: test and build web app
+
+on:
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Out Repository
+        uses: actions/checkout@v3
+
+      - name: Set Up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com
+
+      - name: Install Dependencies
+        run: npm i
+        env:
+          REACT_APP_OUTBOUND_URL: ${{ secrets.OUTBOUND_URL }}
+          REACT_APP_INBOUND_URL: ${{ secrets.INBOUND_URL }}
+
+      - name: Build Web App
+        run: npm run build
+        env:
+          REACT_APP_OUTBOUND_URL: ${{ secrets.OUTBOUND_URL }}
+          REACT_APP_INBOUND_URL: ${{ secrets.INBOUND_URL }}
+
+      - name: Run Unit Tests
+        run: npm test
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          config: video=false
+          start: npm run start
+          wait-on: "http://localhost:3000"
+          browser: chrome
+
+      - name: Upload Screenshots
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
