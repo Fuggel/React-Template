@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    h2 {
+        font: $fontXLarge;
+        color: $colorText;
+    }
+}
+
+
+//////////////////////////////
+/// DARK MODE
+//////////////////////////////
+
+.dark-mode .header h2 {
+    color: $colorTextLight;
+}

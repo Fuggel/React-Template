@@ -1,0 +1,101 @@
+.sidebar {
+    @include box-shadow;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    height: 100%;
+    font: $fontNormal;
+    display: flex;
+    flex-direction: column;
+
+    .sidebar-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 20px 0 20px 10px;
+
+        img {
+            height: 50px;
+        }
+
+        p {
+            color: $colorText;
+        }
+    }
+
+    .sidebar-section,
+    .sidebar-section-bottom {
+        margin-bottom: 20px;
+
+        .sidebar-section-title,
+        .sidebar-menu-item {
+            padding: 10px 20px;
+        }
+
+        .sidebar-section-title {
+            color: $colorTextGrey;
+            font: $fontSmall;
+        }
+
+        .sidebar-menu-item {
+            @include transition;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font: $fontSmall;
+            color: $colorText;
+            text-decoration: none;
+            margin-bottom: 3px;
+
+            &:hover {
+                background-color: $colorBtnLight;
+            }
+        }
+
+        .active {
+            background-color: $colorBtnLight;
+        }
+    }
+
+    .sidebar-section-bottom {
+        margin-top: auto;
+
+        .sidebar-menu-item {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+
+//////////////////////////////
+/// DARK MODE
+//////////////////////////////
+
+.dark-mode .sidebar {
+
+    .sidebar-logo p {
+        color: $colorTextLight;
+    }
+
+    .sidebar-section {
+
+        .sidebar-menu-item {
+            color: $colorTextLight;
+
+            &:hover {
+                color: $colorText;
+            }
+        }
+
+        .active {
+            color: $colorText;
+        }
+    }
+}

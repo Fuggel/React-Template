@@ -1,0 +1,32 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 250px;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+
+    a {
+        @include transition;
+
+        font: $fontNormal;
+        color: $colorText;
+        text-decoration: none;
+        text-decoration-color: transparent;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+//////////////////////////////
+/// DARK MODE
+//////////////////////////////
+
+.dark-mode .footer a {
+    color: $colorTextLight;
+}
