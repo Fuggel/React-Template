@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+
+    &-track {
+        @include border-radius;
+        background: $colorBtnLight;
+    }
+
+    &-thumb {
+        @include border-radius;
+        background: $colorDarkBg;
+
+        &:hover {
+            background: $colorBtnHoverDark;
+        }
+    }
+}
+
+
+//////////////////////////////
+/// DARK MODE
+//////////////////////////////
+
+.dark-mode {
+    ::-webkit-scrollbar-track {
+        background: $colorDarkBg;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $colorLightBg;
+
+        &:hover {
+            background: $colorBtnHoverLight;
+        }
+    }
+}
