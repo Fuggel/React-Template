@@ -1,4 +1,4 @@
-# React-Web_App_Template
+# React-Template
 
 A web app template built with React, TypeScript and SCSS
 
@@ -16,7 +16,7 @@ A web app template built with React, TypeScript and SCSS
 
 ## Setup
 
-1. Clone this repository with `git clone https://github.com/Fuggel/React-Web_App_Template.git`.
+1. Clone this repository with `git clone https://github.com/Fuggel/React-Template.git`.
 2. For development you need to have [node](https://nodejs.org/en/) (LTS version) installed.
 3. Copy the content of `env.example` in the projects root directory, create a `.env` file and add your desired environment variables.
 
