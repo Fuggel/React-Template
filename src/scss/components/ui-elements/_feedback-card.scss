@@ -1,0 +1,29 @@
+.feedback-card {
+    @include border-radius;
+    @include flex-center;
+
+    gap: 10px;
+    font: $fontFeedback;
+    width: fit-content;
+    max-width: 50%;
+    padding: 10px;
+    margin: 25px auto;
+
+    &.success-msg {
+        color: $colorSuccess;
+        background-color: $colorSuccessBg;
+        border: 2px solid $colorSuccess;
+    }
+
+    &.warning-msg {
+        color: $colorWarning;
+        background-color: $colorWarningBg;
+        border: 2px solid $colorWarning;
+    }
+
+    &.error-msg {
+        color: $colorError;
+        background-color: $colorErrorBg;
+        border: 2px solid $colorError;
+    }
+}

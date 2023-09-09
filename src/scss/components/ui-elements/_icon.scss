@@ -1,0 +1,54 @@
+.icon {
+    @include transition;
+
+    cursor: pointer;
+}
+
+.svg-icon {
+    color: $colorDarkBg;
+}
+
+.cta-icon {
+    color: $colorBtnCta;
+
+    &:hover {
+        color: $colorBtnCtaHover;
+    }
+}
+
+.caution-icon {
+    color: $colorBtnCaution;
+
+    &:hover {
+        color: $colorBtnCautionBg;
+    }
+}
+
+.cancel-icon {
+    color: $colorBtnCancel;
+
+    &:hover {
+        color: $colorBtnCancelBg
+    }
+}
+
+.toggle-icon {
+    color: $colorDarkBg;
+
+    &:hover {
+        color: $colorBtnHoverDark;
+    }
+}
+
+
+//////////////////////////////
+/// DARK MODE
+//////////////////////////////
+
+.dark-mode .toggle-icon {
+    color: $colorBtnLight;
+
+    &:hover {
+        color: $colorBtnHoverLight;
+    }
+}

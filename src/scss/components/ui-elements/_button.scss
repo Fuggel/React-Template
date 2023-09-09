@@ -1,0 +1,35 @@
+.button {
+    @include transition;
+
+    font: $fontNormal;
+    cursor: pointer;
+    min-width: 75px;
+    border-radius: 4px;
+    border: none;
+    padding: 10px 20px;
+    color: #FFF;
+}
+
+.cta-button {
+    background-color: $colorBtnCta;
+
+    &:hover {
+        background-color: $colorBtnCtaHover;
+    }
+}
+
+.caution-button {
+    background-color: $colorBtnCaution;
+
+    &:hover {
+        background-color: $colorBtnCautionBg;
+    }
+}
+
+.cancel-button {
+    background-color: $colorBtnCancel;
+
+    &:hover {
+        background-color: $colorBtnCancelBg;
+    }
+}
