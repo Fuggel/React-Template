@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { appSettings } from "../config/AppSettings";
+import { appConfig } from "../config/appConfig";
 import { IAppViewState } from "../interfaces/IAppViewState";
 import { RootState } from ".";
 
 
 const initialAppViewState: IAppViewState = {
-    darkMode: appSettings.darkMode,
+    darkMode: appConfig.darkMode,
 };
 
 const appViewSlice = createSlice({

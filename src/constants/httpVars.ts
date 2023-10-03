@@ -1,5 +1,5 @@
-import { appSettings } from "../config/AppSettings";
+import { appConfig } from "../config/appConfig";
 
 
-export const OUTBOUND_URL = `${appSettings.outboundUrl}/`;
-export const INBOUND_URL = `${appSettings.inboundUrl}/`;
+export const OUTBOUND_URL = `${appConfig.outboundUrl}/`;
+export const INBOUND_URL = `${appConfig.inboundUrl}/`;
