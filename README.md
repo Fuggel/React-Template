@@ -10,7 +10,12 @@ A web app template built with React, TypeScript and SCSS
 - Redux setup
 - Light and dark mode
 - Custom hooks for [GET](./src/hooks/useFetch.ts) and [POST](./src/hooks/usePost.ts) requests
-- Customizable components via props: [Button.tsx](./src/components/ui-elements/Button.tsx), [FeedbackCard.tsx](./src/components/ui-elements/FeedbackCard.tsx) and [Icon.tsx](./src/components/ui-elements/Icon.tsx)
+- Customizable components via props:
+  - [Button.tsx](./src/components/ui-elements/Button.tsx)
+  - [FeedbackCard.tsx](./src/components/ui-elements/FeedbackCard.tsx)
+  - [Icon.tsx](./src/components/ui-elements/Icon.tsx)
+  - [Modal.tsx](./src/components/ui-elements/Modal.tsx)
+  - [ToggleSwitch.tsx](./src/components/ui-elements/ToggleSwitch.tsx)
 - Unit (Jest) and E2E (Cypress) test setup
 - Automated [test and build workflow](./.github/workflows/test_and_build.yml) on PRs targeting the main branch
 
