@@ -1,0 +1,60 @@
+.modal {
+    @include flex-center;
+
+    position: fixed;
+    top: 50%;
+    left: calc(-125px + 50%);
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999999;
+
+    .modal-content {
+        @include border-radius;
+        @include box-shadow;
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        width: fit-content;
+        max-width: 35%;
+        padding: 24px;
+        background: $colorLightBg;
+        word-break: break-word;
+
+        .modal-title {
+            font: $fontLargeBold;
+            color: $colorText;
+        }
+
+        .modal-text {
+            font: $fontNormal;
+            color: $colorTextGrey;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 15px;
+        }
+    }
+}
+
+
+//////////////////////////////
+/// DARK MODE
+//////////////////////////////
+
+.dark-mode .modal {
+
+    .modal-content {
+        background: $colorDarkBg;
+
+        .modal-title {
+            color: $colorTextLight;
+        }
+    }
+}
