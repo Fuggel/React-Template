@@ -1,9 +1,10 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { faHome, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faMoon, faLightbulb } from "@fortawesome/free-solid-svg-icons";
 import { appViewActions, selectDarkMode } from "../../store/appView";
 import Icon from "../ui-elements/Icon";
+import ToggleSwitch from "../ui-elements/ToggleSwitch";
 
 
 const Sidebar: React.FC = () => {
@@ -11,6 +12,13 @@ const Sidebar: React.FC = () => {
     const dispatch = useDispatch();
     const darkMode = useSelector(selectDarkMode);
     const isActive = (path: string) => location.pathname === path;
+
+    const iconStyles: React.CSSProperties = {
+        position: "absolute",
+        top: "2px",
+        fontSize: "1.4rem",
+        color: "#fff"
+    };
 
     return (
         <div className="sidebar" data-testid="sidebar">
@@ -32,7 +40,13 @@ const Sidebar: React.FC = () => {
             <section className="sidebar-section-bottom">
                 <p className="sidebar-section-title">Settings</p>
                 <div className="sidebar-menu-item">
-                    <Icon type="toggle" icon={darkMode ? faSun : faMoon} onClick={() => dispatch(appViewActions.toggleDarkMode())} />
+                    <ToggleSwitch
+                        onChange={() => dispatch(appViewActions.toggleDarkMode())}
+                        checked={darkMode}
+                        testId="dark-mode"
+                        uncheckedIcon={<Icon icon={faMoon} type="custom" style={{ ...iconStyles, right: 5 }} />}
+                        checkedIcon={<Icon icon={faLightbulb} type="custom" style={{ ...iconStyles, left: 6 }} />}
+                    />
                 </div>
             </section>
         </div>

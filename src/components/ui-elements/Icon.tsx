@@ -9,9 +9,10 @@ interface Props {
     onClick?: () => void;
     size?: "lg" | "md" | "sm" | "xs";
     color?: string;
+    style?: React.CSSProperties;
 }
 
-const Icon: React.FC<Props> = ({ type, icon, onClick, size, color }) => {
+const Icon: React.FC<Props> = ({ type, icon, onClick, size, color, style }) => {
     let iconSize: SizeProp;
 
     switch (size) {
@@ -40,6 +41,7 @@ const Icon: React.FC<Props> = ({ type, icon, onClick, size, color }) => {
             icon={icon}
             size={iconSize}
             color={color}
+            style={style}
         />
     );
 };
