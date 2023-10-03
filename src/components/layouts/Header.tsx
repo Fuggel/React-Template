@@ -1,23 +1,15 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { routeConfig } from "../../config/routeConfig";
 
 
 const Header: React.FC = () => {
     const location = useLocation();
-    let pageTitle = "";
-
-    switch (true) {
-        case location.pathname === "/":
-            pageTitle = "Home";
-            break;
-        default:
-            pageTitle = "";
-            break;
-    }
+    const currRoute = routeConfig.find((r) => r.path === location.pathname);
 
     return (
         <header className="header">
-            <h2>{pageTitle}</h2>
+            <h2>{currRoute?.pageTitle}</h2>
         </header>
     );
 };
